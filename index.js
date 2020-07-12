@@ -212,7 +212,7 @@ async function showPlayerInfo(tag) {
         }
     } else {
         playerLegendStatsUnlocked = 0;
-    }
+    } // The Wikia links get images from the Clash of clans wiki, all of the <:x:> formats are custom discord emotes which will work in any server if the bot's in the server with the custom emotes
         switch (playerTownHallLevel) {
         case 1:
         playerTownHallPicture = 'https://vignette.wikia.nocookie.net/clashofclans/images/f/fd/Town_Hall1.png/revision/latest/scale-to-width-down/100?cb=20170827034930';
@@ -919,11 +919,6 @@ async function showClanByTag(tag) {
   }
 }
 
-//Niko: #8JGG220YG
-//Build: #9QCVUR0QQ
-//Mick B: #L822LP9R
-//Roady: #YQGR8PV02
-
 const token = '';
 
 const PREFIX = '!';
@@ -950,7 +945,7 @@ bot.on('message', async message=>{
             .setTitle('Help Page')
             .setAuthor('Clash of Clans Bot', 'https://freepngimg.com/download/clash_of_clans/93475-heart-clash-of-boom-royale-clans-beach.png', "https://www.github.com/Popboy11")
             .setThumbnail('https://i.imgur.com/m2nBrcm.png')
-            .addField('Commands', '**!help** - Brings up the help page!\n**!ping** - Pings the bot!\n**!bugreport [report]** - Files a Bug report to the bot\'s creator\n**!player [tag]** - Shows Statistics for the player\n**!player clan [tag]** - Shows the page for the player\'s clan\n**!clan [tag]** - Shows the page for the Clan\n**!remind** - Creates a new reminder')
+            .addField('Commands', '**!help** - Brings up the help page!\n**!ping** - Pings the bot!\n**!bugreport [report]** - Files a Bug report to the bot\'s creator\n**!player [tag]** - Shows Statistics for the player\n**!player clan [tag]** - Shows the page for the player\'s clan\n**!clan [tag]** - Shows the page for the Clan\n**!remind** - Creates a new reminder\n**!sync [playertag]** - syncs your clash tag with your discord account\n**!stats** - Shows your synced player stats\n**!stats clan** - Shows your synced stats for your clan')
         message.channel.send(helpPage)
         break;
         case 'bugreport':
@@ -969,8 +964,6 @@ bot.on('message', async message=>{
             console.log(playerRestOfMessage)
             GetPlayerStats(playerIdTried, message.channel, message.author['tag'], playerRestOfMessage);
             break;
-        //Private clan: #29CY0090
-        //The blue angel: #2VPJQP0J
         case 'clan':
             channelSentIn = message.channel;
             playerClanAttempt = args[1];
